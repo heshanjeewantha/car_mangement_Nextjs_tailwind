@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="bg-primary-white font-sans flex flex-col"
+        className="relative"
         suppressHydrationWarning={true}  // Prevent hydration errors
       >
         {children}
