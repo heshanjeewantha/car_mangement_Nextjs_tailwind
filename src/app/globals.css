@@ -1,26 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+
+
+@theme {
+  /* Font family */
+  --font-inter: "Inter", sans-serif;
+
+  /* Custom colors */
+  --color-black-100: #2B2C35;
+  --color-primary-blue: #2B59FF;
+  --color-primary-blue-100: #F5F8FF;
+  --color-secondary-orange: #f79761;
+  --color-light-white: rgba(59, 60, 152, 0.03);
+  --color-light-white-100: rgba(59, 60, 152, 0.02);
+  --color-grey: #747A88;
+
+  /* You can define background patterns or use them inline via utility classes */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Optional: Custom utilities if needed */
+@layer utilities {
+  .bg-pattern {
+    background-image: url('/pattern.png');
+  }
+  .bg-hero-bg {
+    background-image: url('/hero-bg.png');
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
+
+/* START: General styles */
+.max-width {
+  @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+  @apply px-6 sm:px-16;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.custom-btn {
+  @apply relative flex flex-row items-center justify-center px-6 py-3 outline-none;
+}
+/* END: General styles */
+
+/* START: Hero styles */
+.hero {
+  @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
+}
+
+.hero__title {
+  @apply font-extrabold;
+  font-size: clamp(3rem, 6vw, 4.5rem); /* responsive heading */
+}
+
+.hero__subtitle {
+  margin-top: 1.25rem;
+  font-weight: 300;
+  font-size: 1.6875rem;
+  color: var(--color-black-100);
+}
+
+.hero__image-container {
+  @apply xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen;
+}
+
+.hero__image {
+  @apply relative z-0;
+  width: 90%;
+  height: 590px;
+  @apply xl:w-full xl:h-full;
+}
+
+.hero__image-overlay {
+  @apply absolute bg-repeat-round -z-10 overflow-hidden;
+  top: -6rem;
+  right: -25%;
+  background-image: url('/hero-bg.png');
+  height: 590px;
+  @apply xl:-top-24 xl:-right-1/2 xl:h-screen w-full;
+}
+/* END: Hero styles */
