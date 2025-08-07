@@ -24,10 +24,10 @@
 /* Optional: Custom utilities if needed */
 @layer utilities {
   .bg-pattern {
-    background-image: url('/public/pattern.png');
+    background-image: url('/pattern.png');
   }
   .bg-hero-bg {
-    background-image: url('/public/hero-bg.png');
+    background-image: url('/hero-bg.png');
   }
 }
 
@@ -96,7 +96,7 @@
   @apply absolute bg-repeat-round -z-10 overflow-hidden;
   top: -6rem;
   right: -25%;
-  background-image: url('/public/hero-bg.png');
+  background-image: url('/hero-bg.png');
   height: 590px;
   @apply xl:-top-24 xl:-right-1/2 xl:h-screen w-full;
 }
